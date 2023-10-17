@@ -1,0 +1,41 @@
+function manhunt:tellraw/general/clear
+function manhunt:tellraw/chinese/manhunt
+tellraw @s [{"text":"玩家角色","bold":"true","color":"gray"},{"text":"[点击选择]","color":"#606060"}]
+tellraw @s [{"text":"[返回]","bold":"true","color":"red","hoverEvent":{"action":"show_text","value":{"text":"返回上级","color":"#FF847F"}},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/backa"}}]
+scoreboard players operation v3 cal = @s ps
+scoreboard players operation v3 cal *= five num
+scoreboard players operation @s ups0 = v3 cal
+scoreboard players operation @s ups1 = v3 cal
+scoreboard players operation @s ups2 = v3 cal
+scoreboard players operation @s ups3 = v3 cal
+scoreboard players operation @s ups4 = v3 cal
+scoreboard players add @s ups0 1
+scoreboard players add @s ups1 2
+scoreboard players add @s ups2 3
+scoreboard players add @s ups3 4
+scoreboard players add @s ups4 5
+tag @s add selector
+#zero
+execute as @a[team=hunter] if score @s temuid = @p[tag=selector] ups0 run tellraw @p[tag=selector] [{"text":"追杀者 ","color":"#A10300","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"逃生者","color":"green"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/hunterrelativeupszero"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=runner] if score @s temuid = @p[tag=selector] ups0 run tellraw @p[tag=selector] [{"text":"逃生者 ","color":"green","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"观察者","color":"#AA924E"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/runnerrelativeupszero"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=spectator] if score @s temuid = @p[tag=selector] ups0 run tellraw @p[tag=selector] [{"text":"观察者 ","color":"#AA924E","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"追杀者","color":"red"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/spectatorrelativeupszero"}},{"selector":"@s","color":"white","bold":"false"}]
+#one
+execute as @a[team=hunter] if score @s temuid = @p[tag=selector] ups1 run tellraw @p[tag=selector] [{"text":"追杀者 ","color":"#A10300","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"逃生者","color":"green"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/hunterrelativeupsone"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=runner] if score @s temuid = @p[tag=selector] ups1 run tellraw @p[tag=selector] [{"text":"逃生者 ","color":"green","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"观察者","color":"#AA924E"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/runnerrelativeupsone"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=spectator] if score @s temuid = @p[tag=selector] ups1 run tellraw @p[tag=selector] [{"text":"观察者 ","color":"#AA924E","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"追杀者","color":"red"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/spectatorrelativeupsone"}},{"selector":"@s","color":"white","bold":"false"}]
+#two
+execute as @a[team=hunter] if score @s temuid = @p[tag=selector] ups2 run tellraw @p[tag=selector] [{"text":"追杀者 ","color":"#A10300","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"逃生者","color":"green"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/hunterrelativeupstwo"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=runner] if score @s temuid = @p[tag=selector] ups2 run tellraw @p[tag=selector] [{"text":"逃生者 ","color":"green","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"观察者","color":"#AA924E"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/runnerrelativeupstwo"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=spectator] if score @s temuid = @p[tag=selector] ups2 run tellraw @p[tag=selector] [{"text":"观察者 ","color":"#AA924E","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"追杀者","color":"red"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/spectatorrelativeupstwo"}},{"selector":"@s","color":"white","bold":"false"}]
+#three
+execute as @a[team=hunter] if score @s temuid = @p[tag=selector] ups3 run tellraw @p[tag=selector] [{"text":"追杀者 ","color":"#A10300","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"逃生者","color":"green"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/hunterrelativeupsthree"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=runner] if score @s temuid = @p[tag=selector] ups3 run tellraw @p[tag=selector] [{"text":"逃生者 ","color":"green","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"观察者","color":"#AA924E"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/runnerrelativeupsthree"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=spectator] if score @s temuid = @p[tag=selector] ups3 run tellraw @p[tag=selector] [{"text":"观察者 ","color":"#AA924E","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"追杀者","color":"red"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/spectatorrelativeupsthree"}},{"selector":"@s","color":"white","bold":"false"}]
+#four
+execute as @a[team=hunter] if score @s temuid = @p[tag=selector] ups4 run tellraw @p[tag=selector] [{"text":"追杀者 ","color":"#A10300","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"逃生者","color":"green"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/hunterrelativeupsfour"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=runner] if score @s temuid = @p[tag=selector] ups4 run tellraw @p[tag=selector] [{"text":"逃生者 ","color":"green","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"观察者","color":"#AA924E"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/runnerrelativeupsfour"}},{"selector":"@s","color":"white","bold":"false"}]
+execute as @a[team=spectator] if score @s temuid = @p[tag=selector] ups4 run tellraw @p[tag=selector] [{"text":"观察者 ","color":"#AA924E","bold":"true","hoverEvent":{"action":"show_text","value":[{"text":"点击以将身份切换至 "},{"text":"追杀者","color":"red"}]},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/spectatorrelativeupsfour"}},{"selector":"@s","color":"white","bold":"false"}]
+#-end
+scoreboard players operation @s psincrement = @s ps
+scoreboard players add @s psincrement 1
+tellraw @s [{"text":"< ","color":"red","bold":"true","hoverEvent":{"action":"show_text","value":{"text":"上一页","color":"red"}},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/lastpage"}},{"score":{"name":"@s","objective":"psincrement"},"color":"gray","hoverEvent":{"action":"show_text","value":{"text":"当前页数","color":"white"}},"clickEvent":{"action":"run_command","value":""}},{"text":" / ","color":"white","hoverEvent":{"action":"show_text","value":{"text":"转到首页","color":"dark_purple"}},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/firstpage"}},{"score":{"name":"v1","objective":"cal"},"color":"gray","clickEvent":{"action":"run_command","value":""},"hoverEvent":{"action":"show_text","value":{"text":"总页数","color":"white"}}},{"text":" >","color":"green","bold":"true","hoverEvent":{"action":"show_text","value":{"text":"下一页","color":"green"}},"clickEvent":{"action":"run_command","value":"/function manhunt:menu/settings/configidentity/nextpage"}}]
