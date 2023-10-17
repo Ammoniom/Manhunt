@@ -1,0 +1,5 @@
+{
+	"values":[
+		"manhunt:initialisation/gamerules","manhunt:initialisation/scoreboard","manhunt:initialisation/team"
+	]
+}
